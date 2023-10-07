@@ -1,0 +1,55 @@
+[
+    {
+      "id": 1,
+      "name": "Weeding Parties",
+      "image": "https://i.ibb.co/gwj7c1F/victoria-priessnitz-JFAPl7br-L6-U-unsplash.jpg",
+      "price": "2022 $",
+      "description": "On your wedding day, a wedding manager will be your point person to oversee setup, place your personal belongings, and help keep the flow of the day on track.",
+      "short_des" : "We have three kinds of weeding parties , premium , standard and regular ! you can choice on your budget "
+    },
+    {
+      "id": 2,
+      "name": "Birthday parties",
+      "image": "https://i.ibb.co/jkTNttR/young-joyful-friends-celebrating.jpg",
+      "price": "1590 $",
+      "description": "When we say event management for birthdays we consider the whole planning, organizing, and implementing the whole birthday celebration.",
+      "short_des" : "Birthday parties only have regular package"
+    },
+    
+    {
+        "id": 3,
+        "name": "Engagement parties",
+        "image": "https://i.ibb.co/N2pKnKs/i-Stock-1402105494.jpg",
+        "price": "6999 $",
+        "description": "At the end of the day, an engagement party is exactly what it sounds like: a party to celebrate the engaged couple and their upcoming wedding.",
+        "short_des" : "We have two kinds of engagement parties , premium and standard ! you can choice on your budget "
+      },
+
+
+    {
+      "id": 4,
+      "name": "Anniversary parties",
+      "image": "https://i.ibb.co/hHvXsHP/71-Nv2-Ye-Wc-WL.jpg",
+      "price": "49.99 $",
+      "description": "Anniversary Party Planner. An anniversary party is an ideal way to mark a milestone. It also lets friends and family members share in the celebration.",
+      "short_des" : "Anniversary parties have two kinds of category premium and standard ! you can choice on your budget "
+    },
+    {
+      "id": 5,
+      "name": "Retirement parties",
+      "image": "https://i.ibb.co/vZDCwVx/Picture13.png",
+      "price": "1456 $",
+      "description": "A retirement party is the opportunity to celebrate the retiree's past accomplishments as well as their future endeavors.",
+      "short_des" : "Retirement parties have only regular package"
+    },
+
+    {
+        "id": 6,
+        "name": "Baby Shower parties",
+        "image": "https://i.ibb.co/1KjdHGd/best-baby-shower-themes-getty-0223-2000-d2361e81b3134ba4955da19fb1c9cf19.webp",
+        "price": "3999 $",
+        "description": "Baby shower invitation wording can be kept short and sweet, as long as you include the essential details when, where and how you will be celebrating the imminent arrival of your new baby.",
+        "short_des" : "Baby Shower parties have standard and regular package ! you may choice one"
+      }
+  ]
+  

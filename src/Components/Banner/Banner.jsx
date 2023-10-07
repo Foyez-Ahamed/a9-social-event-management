@@ -11,7 +11,7 @@ const Banner = () => {
       <h1 className="mb-5 text-xl md:text-3xl lg:text-4xl font-bold text-white">Make your event stand out from the best!</h1>
       <p className="mb-5 text-white">From Wedding Functions to Birthday Parties , Anniversaries, Engagement parties, retirement parties and baby shower, We offer full range of Events Management Services that scale to your needs & budget.</p>
 
-      <Link><button className=" lg:text-[16px] px-5 py-2 bg-[#FF900E] rounded-md text-white">JOIN US</button></Link>
+      <Link to='/contact'><button className=" lg:text-[16px] px-6 py-3 bg-[#FF900E] rounded-md text-white">JOIN US</button></Link>
 
     </div>
     </div>

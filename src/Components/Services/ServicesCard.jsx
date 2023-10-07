@@ -3,7 +3,7 @@ import { FaShareAlt, FaHeart } from 'react-icons/fa';
 
 const ServicesCard = ({service}) => {
     
-    const {image, name, short_des, price} = service || {};
+    const {id, image, name, short_des, price} = service || {};
      
 
     return (
@@ -21,7 +21,7 @@ const ServicesCard = ({service}) => {
    </div>
 
     <div className="w-full">
-      <Link><button className=" lg:text-[16px] px-4 py-3 bg-[#FF900E] rounded-md text-white w-full">See Details</button></Link>
+      <Link to={`/services/${id}`} ><button className=" lg:text-[16px] px-4 py-3 bg-[#FF900E] rounded-md text-white w-full">See Details</button></Link>
     </div>
   </div>
 </div>

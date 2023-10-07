@@ -19,11 +19,11 @@ const Navbar = () => {
 
                             <NavLink to='/about' className={({isActive, isPending}) => isActive? 'text-[#FF900E] underline' : isPending? 'pending' : ""}><li>About</li></NavLink>
 
-                            <NavLink to='/events' className={({isActive, isPending}) => isActive? 'text-[#FF900E] underline' : isPending? 'pending' : ""}><li>Gallery</li></NavLink>
+                            <NavLink to='/gallery' className={({isActive, isPending}) => isActive? 'text-[#FF900E] underline' : isPending? 'pending' : ""}><li>Gallery</li></NavLink>
 
                             <NavLink to='/events' className={({isActive, isPending}) => isActive? 'text-[#FF900E] underline' : isPending? 'pending' : ""}><li>Events</li></NavLink>
 
-                            <NavLink to='/events' className={({isActive, isPending}) => isActive? 'text-[#FF900E] underline' : isPending? 'pending' : ""}><li>Contact us</li></NavLink>
+                            <NavLink to='/contact' className={({isActive, isPending}) => isActive? 'text-[#FF900E] underline' : isPending? 'pending' : ""}><li>Contact us</li></NavLink>
 
                             
                         </ul>

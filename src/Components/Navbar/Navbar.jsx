@@ -8,7 +8,7 @@ const Navbar = () => {
             <section className="flex justify-between items-center">
 
                 <div className="flex  items-center cursor-pointer">
-                    <img className=" w-[70px] lg:w-[120px]" src={logo} alt="social-events-logo" />
+                    <img className=" w-[70px] lg:w-[130px]" src={logo} alt="social-events-logo" />
                 </div>
 
                 <div className="flex items-center gap-2 lg:gap-6">

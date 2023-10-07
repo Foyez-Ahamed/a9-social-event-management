@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "Weeding Parties",
+      "name": "Weeding Events Manage",
       "image": "https://i.ibb.co/gwj7c1F/victoria-priessnitz-JFAPl7br-L6-U-unsplash.jpg",
       "price": "2022 $",
       "description": "On your wedding day, a wedding manager will be your point person to oversee setup, place your personal belongings, and help keep the flow of the day on track.",
@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "name": "Birthday Parties",
+      "name": "Birthday Parties Manage",
       "image": "https://i.ibb.co/jkTNttR/young-joyful-friends-celebrating.jpg",
       "price": "1590 $",
       "description": "When we say event management for birthdays we consider the whole planning, organizing, and implementing the whole birthday celebration.",
@@ -18,7 +18,7 @@
     
     {
         "id": 3,
-        "name": "Engagement Parties",
+        "name": "Engagement Events Manage",
         "image": "https://i.ibb.co/N2pKnKs/i-Stock-1402105494.jpg",
         "price": "6999 $",
         "description": "At the end of the day, an engagement party is exactly what it sounds like: a party to celebrate the engaged couple and their upcoming wedding.",
@@ -28,15 +28,15 @@
 
     {
       "id": 4,
-      "name": "Anniversary Parties",
+      "name": "Anniversary Parties Manage",
       "image": "https://i.ibb.co/hHvXsHP/71-Nv2-Ye-Wc-WL.jpg",
-      "price": "49.99 $",
+      "price": "4999 $",
       "description": "Anniversary Party Planner. An anniversary party is an ideal way to mark a milestone. It also lets friends and family members share in the celebration.",
       "short_des" : "Anniversary parties have two kinds of category premium and standard ! you can choice on your budget. "
     },
     {
       "id": 5,
-      "name": "Retirement Parties",
+      "name": "Retirement Events Arranged",
       "image": "https://i.ibb.co/vZDCwVx/Picture13.png",
       "price": "1456 $",
       "description": "A retirement party is the opportunity to celebrate the retiree's past accomplishments as well as their future endeavors.",
@@ -45,7 +45,7 @@
 
     {
         "id": 6,
-        "name": "Baby Shower Parties",
+        "name": "Baby Shower Parties Arranged",
         "image": "https://i.ibb.co/1KjdHGd/best-baby-shower-themes-getty-0223-2000-d2361e81b3134ba4955da19fb1c9cf19.webp",
         "price": "3999 $",
         "description": "Baby shower invitation wording can be kept short and sweet, as long as you include the essential details when, where and how you will be celebrating the imminent arrival of your new baby.",

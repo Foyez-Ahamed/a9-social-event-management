@@ -9,13 +9,13 @@ const ServicesCard = ({service}) => {
     return (
         <div>
 
-<div className="card card-compact lg:h-[430px] shadow-xl">
+<div className="card card-compact md:h-[440px] lg:h-[430px] shadow-xl">
   <figure> <img className="lg:h-[200px] w-full object-cover" src={image} alt="serviceImage" /></figure>
   <div className="card-body">
-    <h2 className="card-title text-[24px]">{name}</h2>
+    <h2 className="card-title text-[20px]">{name}</h2>
     <p className=" text-[16px] text-justify">{short_des}</p>
 
-   <div className="flex justify-between items-center gap-36">
+   <div className="flex justify-between items-center gap-36 md:gap-32">
    <p className="font-bold"> Price : {price}</p>
    <p className="flex gap-3 cursor-pointer"><FaShareAlt></FaShareAlt> <FaHeart></FaHeart></p>
    </div>

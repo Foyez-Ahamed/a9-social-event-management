@@ -18,7 +18,7 @@ const About = () => {
       <h1 className="mb-5 text-5xl font-bold">Why choice our <span className="text-[#FF900E]">events</span> ? </h1>
       </div>
      </div>
-    </div>
+      </div>
 
     <div className="mt-10">
 

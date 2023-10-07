@@ -19,7 +19,7 @@ const Gallery = () => {
         <div>
 
     <div>
-        <h1 className="text-center text-xl lg:text-4xl font-bold"><span className="text-[#FF900E]">Event </span>Gallery</h1>
+        <h1 className="text-center text-xl lg:text-4xl font-bold"><span className="text-[#FF900E]">Events </span>Gallery</h1>
      </div>
 
      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">

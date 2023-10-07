@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const GalleryDetails = ({details}) => {
     
-    const {image, name, short_des} = details || {};
+    const {id, image, name, short_des} = details || {};
 
     return (
         <div>
@@ -12,6 +13,12 @@ const GalleryDetails = ({details}) => {
   <div className="card-body mt-10">
     <h2 className="card-title">{name}</h2>
     <p>{short_des}</p>
+
+  <div className="flex justify-between items-center">
+  <Link to={`/services/${id}`}>See Details</Link>
+  <Link to='/contact'>Contact us</Link>
+  </div>
+    
   </div>
 </div>
             

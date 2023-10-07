@@ -4,7 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 
 const MainLayout = () => {
     return (
-        <div className="max-w-screen-xl mx-auto px-3 md:px-16 lg:px-16 py-5 my-4 font-workSans">
+        <div className="max-w-screen-xl mx-auto px-3 md:px-16 lg:px-16 py-5  font-workSans">
 
             <Navbar></Navbar>
 

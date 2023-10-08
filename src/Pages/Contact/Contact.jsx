@@ -1,4 +1,4 @@
-import { FaAddressCard , FaHome  } from 'react-icons/fa';
+import { FaAddressCard  } from 'react-icons/fa';
 import { BiSolidPhoneCall } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import Footer from '../../Components/Footer/Footer';

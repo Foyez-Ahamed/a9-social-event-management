@@ -10,6 +10,7 @@ import Contact from "../Pages/Contact/Contact";
 import ServicesDetails from "../Components/Services/ServicesDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import GalleryPrivateRoute from "./GalleryPrivateRoute/GalleryPrivateRoute";
+import EventsPrivateRoute from "./EventsPrivateRoute/EventsPrivateRoute";
 
 
 const MyCreatedRouter = createBrowserRouter([
@@ -35,7 +36,7 @@ const MyCreatedRouter = createBrowserRouter([
 
             {
                 path : '/events',
-                element : <Events></Events>
+                element : <EventsPrivateRoute><Events></Events></EventsPrivateRoute>
             },
 
             {

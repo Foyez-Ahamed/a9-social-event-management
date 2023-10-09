@@ -27,10 +27,11 @@ const Login = () => {
         userLogin(email, password)
         .then(() => {
             e.target.reset();
+            toast.success('Successfully login')
             navigate( location?.state? location.state : '/')
         })
         .catch((error) => {
-            toast.error('Invalid email or password! Please check it from registration', error.message);
+            toast.error('Invalid email or password! Please check it !', error.message);
             e.target.reset();
         })
 

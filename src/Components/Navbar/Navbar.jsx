@@ -1,18 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
 
     const {user, userLogout, } = useContext(AuthContext);
 
+    const navigate = useNavigate();
+
     const handleLogout = () => {
 
         userLogout()
-        .then(result => {
-            console.log(result.user);
-            alert('user logout')
+        .then(() => {
+            toast.success('Successfully logged out')
+            navigate('/');
         })
         .catch()
 

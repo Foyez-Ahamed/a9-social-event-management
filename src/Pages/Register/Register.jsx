@@ -46,6 +46,7 @@ const Register = () => {
         userRegister(email, password)
         .then(() => {
             e.target.reset();
+            toast.success('Successfully registration')
             navigate( location?.state? location.state : '/')
             updateProfile(auth.currentUser, {
                 displayName : name,

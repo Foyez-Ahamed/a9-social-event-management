@@ -7,7 +7,9 @@ const UpcommingEvents = () => {
 
     return (
         <div>
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500">
             <h1 className="text-4xl font-bold">Our Upcoming <span className="text-[#FF900E]">Events</span></h1>
             <p className="text-center mt-6 lg:text-[18px]">We make your events smart & impactful by personalised event management <br /> services</p>
             </div>
@@ -20,8 +22,11 @@ const UpcommingEvents = () => {
 
        <img src={birthdayPartyPic} className="w-full h-[400px] object-cover"/>
 
-      <div className="absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 text-white ">
+      <div className="absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 text-white">
 
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
         <div className="p-10 md:p-10 lg:p-0">
         <h1 className="text-4xl">Birthday parties Event</h1>
 
@@ -34,6 +39,8 @@ const UpcommingEvents = () => {
              <span className="flex gap-2 items-center"> <AiOutlineSchedule></AiOutlineSchedule> October 19, 2023 6PM to 9PM</span>
 
         </div>
+        </div>
+
 
       </div>
 

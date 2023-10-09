@@ -22,7 +22,9 @@ const Gallery = () => {
         <h1 className="text-center text-xl lg:text-4xl font-bold"><span className="text-[#FF900E]">Events </span>Gallery</h1>
      </div>
 
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="2000">
         {
             gallery.map(details => <GalleryDetails key={details.id} details ={details}></GalleryDetails>)
         }

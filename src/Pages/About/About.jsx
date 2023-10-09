@@ -14,7 +14,8 @@ const About = () => {
       <div className="hero h-[300px] object-cover mt-10" style= {{backgroundImage: 'url(https://i.ibb.co/R0kdsdc/istockphoto-665659606-1024x1024.jpg)'}}>
      <div className="hero-overlay bg-opacity-80"></div>
      <div className="hero-content text-center text-neutral-content">
-     <div className="max-w-md">
+     <div className="max-w-md" data-aos="fade-right" data-aos-duration="1500"
+     >
       <h1 className="mb-5 text-5xl font-bold">Why choice our <span className="text-[#FF900E]">events</span> ? </h1>
       </div>
      </div>

@@ -19,7 +19,9 @@ const Events = () => {
 <div className="hero h-[300px] object-cover mt-10" style= {{backgroundImage: 'url(https://i.ibb.co/924ZpD2/young-joyful-friends-celebrating.jpg)'}}>
      <div className="hero-overlay bg-opacity-80"></div>
      <div className="hero-content text-center text-neutral-content">
-     <div className="max-w-md">
+     <div className="max-w-md" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
       <h1 className="mb-5 text-5xl font-bold"><span className="text-[#FF900E]">Events !</span></h1>
       </div>
      </div>

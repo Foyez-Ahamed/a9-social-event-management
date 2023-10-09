@@ -11,7 +11,9 @@ const Contact = () => {
        <div className="hero h-[300px] object-cover mt-10" style= {{backgroundImage: 'url(https://i.ibb.co/MBtqtXy/8e5bca865732d013fd24b9e71bb0a5f9e06d279b-731x731.png)'}}>
        <div className="hero-overlay bg-opacity-80"></div>
       <div className="hero-content text-center  text-neutral-content">
-      <div className="max-w-md">
+      <div className="max-w-md" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
       <h1 className="mb-5 text-5xl font-bold">Contact<span className="text-[#FF900E]"> Us</span></h1>
       </div>
      </div>
@@ -23,7 +25,9 @@ const Contact = () => {
         <h1 className="text-center text-xl font-bold">Contact us if you need our services. We will be happy to make your events memorable!</h1>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
 
 
    <div className="card bg-orange-400 text-primary-content">

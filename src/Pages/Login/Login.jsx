@@ -30,8 +30,7 @@ const Login = () => {
 
         
         userLogin(email, password)
-        .then((result) => {
-            console.log(result.user);
+        .then(() => {
             e.target.reset();
             navigate( location?.state? location.state : '/')
         })
@@ -45,13 +44,11 @@ const Login = () => {
 
     const handleGoogleLogin = (googleLogin) => {
         googleLogin()
-        .then(result => {
-            console.log(result.user);
+        .then(() => {
             navigate( location?.state? location.state : '/')
 
         })
-        .catch(error => {
-            console.log(error.message);
+        .catch(() => {
         })
     }
 

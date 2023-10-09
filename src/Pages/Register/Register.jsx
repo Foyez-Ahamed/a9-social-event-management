@@ -1,24 +1,31 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { updateProfile } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
+const auth = getAuth(app);
 
 const Register = () => {
 
-    const {userRegister, user} = useContext(AuthContext);
-
-    console.log(user);
+    const {userRegister} = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
 
     const [showPassIcon, setShowPassIcon] = useState(false);
 
+    const location = useLocation();
+
+    const navigate = useNavigate();
+
     const handleRegister = (e) => {
         e.preventDefault();
 
         const form = new FormData(e.currentTarget)
-        // const name = form.get('name');
+        const name = form.get('name');
+        const photoURL = form.get('photoURL')
         const email = form.get('email');
         const password = form.get('password');
         const accepted = e.target.terms.checked;
@@ -39,10 +46,17 @@ const Register = () => {
         }
 
         userRegister(email, password)
-        .then((result) => {
-            console.log(result.user);
+        .then(() => {
             e.target.reset();
+            navigate( location?.state? location.state : '/')
+            updateProfile(auth.currentUser, {
+                displayName : name,
+                photoURL : photoURL
+            })
+            .then()
+            .catch()
         })
+
         .catch(() => {
         })
         
@@ -69,9 +83,9 @@ const Register = () => {
 <input type= "Text"
  placeholder="enter your name..." name="name" required className=" mt-4 mb-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]" /> <br />
 
- {/* <label htmlFor="photoURL">Photo URL</label> <br /> 
+ <label htmlFor="photoURL">Photo URL</label> <br /> 
 <input type= "text"
- placeholder="Photo URL..." name="photoURL" required className=" mt-4 mb-4 input bg-[#F3F3F3] w-[400px] max-w-xs" /> <br />     */}
+ placeholder="Photo URL..." name="photoURL" required className=" mt-4 mb-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]" /> <br />    
 
 <label htmlFor="email">Email address</label> <br /> 
 <input type= "email"

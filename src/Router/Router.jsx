@@ -11,12 +11,14 @@ import ServicesDetails from "../Components/Services/ServicesDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import GalleryPrivateRoute from "./GalleryPrivateRoute/GalleryPrivateRoute";
 import EventsPrivateRoute from "./EventsPrivateRoute/EventsPrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const MyCreatedRouter = createBrowserRouter([
     {
         path : '/',
         element : <MainLayout></MainLayout>,
+        errorElement : <ErrorPage></ErrorPage>,
         children : [
             {
                 path : '/',

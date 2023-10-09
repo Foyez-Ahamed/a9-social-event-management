@@ -18,10 +18,10 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - A: `{}`
 
 <i>Write your explanation here</i>
-
+ First declare a variable name greeting then set a empty object on the variable. Now variable value is a empty array. We know that variable declare with let keyword we can initialize its value by using variable name. So the correct answer is an empty array.
 </p>
 </details>
 
@@ -43,10 +43,10 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - C: `"12"`
 
 <i>Write your explanation here</i>
-
+ By calling sum function send arguments a and b. a type is number and b type is string. we know that sum of numbers with number type and string type it will convert a string type thats why 1 and "2" is result is 12.
 </p>
 </details>
 
@@ -69,10 +69,10 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - A: `['🍕', '🍫', '🥑', '🍔']`
 
 <i>Write your explanation here</i>
-
+  Food array and info object does not connected with each and others. Info object only modify the info object does not change the food array. We console log only food array thats why we get only foods declare variable values. So thats why the answer is A.
 </p>
 </details>
 
@@ -94,10 +94,10 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - B: `Hi there, undefined`
 
 <i>Write your explanation here</i>
-
+ When the sayHi function called there is no arguments provided. In JavaScript, if a function is defined with parameters, but when call the function, do not pass the expected parameters, the missing parameters are set to undefined. Thats why the output is Hi there, undefined.
 </p>
 </details>
 
@@ -122,9 +122,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - C: 3
 
 <i>Write your explanation here</i>
-
-</p>
+ The count initialize to 0. then get the value of nums array by using foEach loop and increments count for each truthy value and then prints the final count, thats why we get answer 3 to console.
+</p>  
 </details>

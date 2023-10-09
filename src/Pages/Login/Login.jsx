@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
 
-    const {userLogin, user} = useContext(AuthContext);
+    const {userLogin, user, providerGoogle} = useContext(AuthContext);
 
     console.log(user);
 
@@ -40,6 +40,19 @@ const Login = () => {
             e.target.reset();
         })
 
+    }
+
+
+    const handleGoogleLogin = (googleLogin) => {
+        googleLogin()
+        .then(result => {
+            console.log(result.user);
+            navigate( location?.state? location.state : '/')
+
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
     }
 
     return (
@@ -79,7 +92,7 @@ const Login = () => {
 </div>
 </form>
 
-<button className= " bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#FF900E] text-[15px] font-medium uppercase">Login with <FcGoogle className="text-xl"></FcGoogle></button>
+<button onClick={() => handleGoogleLogin(providerGoogle)} className= " bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#FF900E] text-[15px] font-medium uppercase">Login with <FcGoogle className="text-xl"></FcGoogle></button>
 {/* form end */}
 
 <div className="mt-5">

@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { updateProfile } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import toast from "react-hot-toast";
 
 const auth = getAuth(app);
 
@@ -12,13 +13,12 @@ const Register = () => {
 
     const {userRegister} = useContext(AuthContext);
 
-    const [registerError, setRegisterError] = useState('');
-
     const [showPassIcon, setShowPassIcon] = useState(false);
 
     const location = useLocation();
 
     const navigate = useNavigate();
+
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -30,18 +30,16 @@ const Register = () => {
         const password = form.get('password');
         const accepted = e.target.terms.checked;
 
-        setRegisterError('');
-
-
+    
         if(password.length < 6) {
-            setRegisterError('Your password must have at least 6 character!');
+            toast.error('Your password must have at least 6 character!');
             return;
 
         } else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)){
-            setRegisterError('Your password must have at least one capital letter and special character!');
+            toast.error('Your password must have at least one capital letter and special character!');
             return;
         } else if(!accepted) {
-            setRegisterError('Please accepted our terms and conditions');
+            toast.error('Please accepted our terms and conditions');
             return;
         }
 
@@ -112,12 +110,6 @@ const Register = () => {
 
 </form>
 {/* form end */}
-
-<div className="mt-5">
-    {
-        registerError && <p className="text-red-600">{registerError}</p>
-    }
-</div>
 
 {/* others content show here please */}
 <div className="mt-5">

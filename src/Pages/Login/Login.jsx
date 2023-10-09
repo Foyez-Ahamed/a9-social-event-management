@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FcGoogle } from 'react-icons/fc';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import toast from "react-hot-toast";
 
 const Login = () => {
 
@@ -11,8 +12,6 @@ const Login = () => {
     console.log(user);
 
     const [showPassIcon, setShowPassIcon] = useState(false);
-
-    const [loginError, setLoginError] = useState('');
 
     const location = useLocation();
 
@@ -26,16 +25,13 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
 
-        setLoginError('');
-
-        
         userLogin(email, password)
         .then(() => {
             e.target.reset();
             navigate( location?.state? location.state : '/')
         })
         .catch((error) => {
-            setLoginError('Does not match with register information !', error.message);
+            toast.error('Does not match with register information !', error.message);
             e.target.reset();
         })
 
@@ -92,11 +88,6 @@ const Login = () => {
 <button onClick={() => handleGoogleLogin(providerGoogle)} className= " bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#FF900E] text-[15px] font-medium uppercase">Login with <FcGoogle className="text-xl"></FcGoogle></button>
 {/* form end */}
 
-<div className="mt-5">
-    {
-        loginError && <p className="text-red-600">{loginError}</p>
-    }
-</div>
 
 {/* others content show here please */}
 <div className="mt-5">

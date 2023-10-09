@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FcGoogle } from 'react-icons/fc';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -13,6 +13,8 @@ const Login = () => {
     const [showPassIcon, setShowPassIcon] = useState(false);
 
     const [loginError, setLoginError] = useState('');
+
+    const location = useLocation();
 
     const navigate = useNavigate();
 
@@ -31,7 +33,7 @@ const Login = () => {
         .then((result) => {
             console.log(result.user);
             e.target.reset();
-            navigate('/')
+            navigate( location?.state? location.state : '/')
         })
         .catch((error) => {
             setLoginError('Does not match with register information !', error.message);

@@ -9,6 +9,7 @@ import Gallery from "../Pages/Gallery/Gallery";
 import Contact from "../Pages/Contact/Contact";
 import ServicesDetails from "../Components/Services/ServicesDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import GalleryPrivateRoute from "./GalleryPrivateRoute/GalleryPrivateRoute";
 
 
 const MyCreatedRouter = createBrowserRouter([
@@ -39,7 +40,7 @@ const MyCreatedRouter = createBrowserRouter([
 
             {
                 path : '/gallery',
-                element : <Gallery></Gallery>
+                element : <GalleryPrivateRoute><Gallery></Gallery></GalleryPrivateRoute>
             },
 
             {

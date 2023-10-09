@@ -1,11 +1,44 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-
+import { FcGoogle } from 'react-icons/fc';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
 
-    const name = useContext(AuthContext);
+    const {userLogin, user} = useContext(AuthContext);
+
+    console.log(user);
+
+    const [showPassIcon, setShowPassIcon] = useState(false);
+
+    const [loginError, setLoginError] = useState('');
+
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        
+        const form = new FormData(e.currentTarget);
+
+        const email = form.get('email');
+        const password = form.get('password');
+
+        setLoginError('');
+
+        
+        userLogin(email, password)
+        .then((result) => {
+            console.log(result.user);
+            e.target.reset();
+            navigate('/')
+        })
+        .catch((error) => {
+            setLoginError('Does not match with register information !', error.message);
+            e.target.reset();
+        })
+
+    }
 
     return (
 <div>
@@ -18,7 +51,7 @@ const Login = () => {
 </div>
 
 {/* form start*/}
-<form>
+<form onSubmit={handleLogin}>
 
 <div className="relative">
 <label htmlFor="email">Email address</label> <br /> 
@@ -26,17 +59,32 @@ const Login = () => {
  placeholder="enter your email..." name="email" required className=" mt-4 mb-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]" /> <br />
 
 <label htmlFor="password">Password</label> <br />
-<input type = "password" placeholder="enter your password" required name="password" className="mt-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]"/>
+<input type = {showPassIcon ? "text" : "password"} placeholder="enter your password" required name="password" className="mt-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]"/>
  <br />
+
+ <span onClick={() => setShowPassIcon(!showPassIcon)} className="cursor-pointer absolute right-[10px] top-[160px]">
+
+ {
+    showPassIcon ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+ }
+
+ </span>
 
 <h1 className="mt-3 cursor-pointer text-[#403F3F]">Forgot password ? </h1>
 
  {/* button  */}
 <input type="submit" value= "Login" className=" btn w-[350px] md:w-[390px] lg:w-[390px] mt-5 font-bold bg-[#FF900E] text-white hover:bg-gray-600" />
 </div>
-
 </form>
+
+<button className= " bg-[#403F3F] flex gap-2 justify-center items-center w-full py-3 rounded-md mt-5 text-white hover:bg-[#FF900E] text-[15px] font-medium uppercase">Login with <FcGoogle className="text-xl"></FcGoogle></button>
 {/* form end */}
+
+<div className="mt-5">
+    {
+        loginError && <p className="text-red-600">{loginError}</p>
+    }
+</div>
 
 {/* others content show here please */}
 <div className="mt-5">

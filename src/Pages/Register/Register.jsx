@@ -1,10 +1,58 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Register = () => {
+
+    const {userRegister, user} = useContext(AuthContext);
+
+    console.log(user);
+
+    const [registerError, setRegisterError] = useState('');
+
+    const [showPassIcon, setShowPassIcon] = useState(false);
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+
+        const form = new FormData(e.currentTarget)
+        // const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password');
+        const accepted = e.target.terms.checked;
+
+        setRegisterError('');
+
+
+        if(password.length < 6) {
+            setRegisterError('Your password must have at least 6 character!');
+            return;
+
+        } else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)){
+            setRegisterError('Your password must have at least one capital letter and special character!');
+            return;
+        } else if(!accepted) {
+            setRegisterError('Please accepted our terms and conditions');
+            return;
+        }
+
+        userRegister(email, password)
+        .then((result) => {
+            console.log(result.user);
+            e.target.reset();
+        })
+        .catch(() => {
+        })
+        
+
+    }
+
     return (
         <div>
- <div className="flex justify-center">
+
+<div className="flex justify-center">
 
 <div className="shadow-xl p-8 md:w-[450px] lg:w-[450px] rounded-xl">
 
@@ -13,7 +61,7 @@ const Register = () => {
 </div>
 
 {/* form start*/}
-<form>
+<form onSubmit={handleRegister}>
 
 <div className="relative">
 
@@ -30,8 +78,16 @@ const Register = () => {
  placeholder="enter your email..." name="email" required className=" mt-4 mb-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]" /> <br />
 
 <label htmlFor="password">Password</label> <br />
-<input type = "password" placeholder="enter your password" required name="password" className="mt-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]"/>
+<input type= {showPassIcon ? "text" : "password"} placeholder="enter your password" required name="password" className="mt-4 input bg-[#F3F3F3] w-[350px] md:w-[390px] lg:w-[390px]"/>
  <br />
+
+ <span onClick={() => setShowPassIcon(!showPassIcon)} className="cursor-pointer absolute right-[10px] top-[265px]">
+
+ {
+    showPassIcon ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+ }
+
+ </span>
 
  <input type="checkbox" name="terms" id="terms" className="mt-5" />
  <label htmlFor="terms" className="ml-2">Accepted our <a href="" className="text-[#403F3F]">terms and conditions</a></label> <br />
@@ -42,6 +98,12 @@ const Register = () => {
 
 </form>
 {/* form end */}
+
+<div className="mt-5">
+    {
+        registerError && <p className="text-red-600">{registerError}</p>
+    }
+</div>
 
 {/* others content show here please */}
 <div className="mt-5">

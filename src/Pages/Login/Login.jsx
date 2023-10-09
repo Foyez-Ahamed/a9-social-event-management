@@ -7,9 +7,8 @@ import toast from "react-hot-toast";
 
 const Login = () => {
 
-    const {userLogin, user, providerGoogle} = useContext(AuthContext);
+    const {userLogin, providerGoogle} = useContext(AuthContext);
 
-    console.log(user);
 
     const [showPassIcon, setShowPassIcon] = useState(false);
 
@@ -31,7 +30,7 @@ const Login = () => {
             navigate( location?.state? location.state : '/')
         })
         .catch((error) => {
-            toast.error('Does not match with register information !', error.message);
+            toast.error('Invalid email or password! Please check it from registration', error.message);
             e.target.reset();
         })
 

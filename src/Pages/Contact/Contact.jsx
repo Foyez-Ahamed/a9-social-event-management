@@ -2,9 +2,21 @@ import { FaAddressCard  } from 'react-icons/fa';
 import { BiSolidPhoneCall } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import Footer from '../../Components/Footer/Footer';
+import toast from 'react-hot-toast';
 
 
 const Contact = () => {
+
+
+   const handleContact = (e) => {
+    e.preventDefault();
+   
+    toast.success('Send message successfully')
+
+    e.target.reset();
+
+   }
+
     return (
         <div>
 
@@ -68,15 +80,16 @@ const Contact = () => {
 
          <div>
 
-          <form> 
+          <form onSubmit={handleContact}> 
 
           <div className='flex gap-6 mt-6'>
-          <input type="text" required placeholder="Your name" className="input input-bordered w-full max-w-xs" />
-          <input type="Email" required placeholder="Your email" className="input input-bordered w-full max-w-xs" />
+          <input type="text" name='name' required placeholder="Your name" className="input input-bordered w-full max-w-xs" />
+
+          <input type="Email" name='email' required placeholder="Your email" className="input input-bordered w-full max-w-xs" />
           </div>
 
           <div className='flex gap-6 mt-6'>
-          <input type="phone" required placeholder="Your phone" className="input input-bordered w-full max-w-xs" />
+          <input type="phone" name='phone' required placeholder="Your phone" className="input input-bordered w-full max-w-xs" />
           <input type="text" required placeholder="where do you heard about us" className="input input-bordered w-full max-w-xs" />
           </div>
 

@@ -15,7 +15,6 @@ const AuthProvider = ({children}) => {
 
     const [loading, setLoading] = useState(true);
 
-
     const userRegister = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
